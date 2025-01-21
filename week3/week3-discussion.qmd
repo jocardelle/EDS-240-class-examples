@@ -1,0 +1,38 @@
+---
+title: "EDS 240 - Week 3 Discussion"
+author: "Josephine Cardelle"
+date: 1/21/2024
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+### Example 1
+```{r}
+#| fig-alt: "A stacked histogram of penguin body masses per species  where Gentoo has the highest average body mass (in grams) over Adelie and Chinstrap species, by x percent/x grams."
+#| warning: false
+#| message: false
+#| echo: false
+
+
+library(ggplot2)
+library(palmerpenguins)
+
+ggplot(data = penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(alpha = 0.5, 
+                 position = "identity") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body masses")
+```
+
+
+### Example 2
+
+![](nyt_viz){fig-alt="A dot plot of monthly global temperatures compared to the 20th-century average, where monthly global temperatures are increasing over time. Nearly every month since the mid-1970s is warmer than the 20th-century average, with 12 record-breaking hot months occurring between 2015-2023."}
+
+
+### Example 3
+
+<img src="fig_1a.png" alt="A heatmap of global species observations where the highest concentration of observations occur in high-income countries, particularly in the USA and European nations." width="700px">
